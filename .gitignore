@@ -336,3 +336,11 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+Turnstyle/bin/
+
+Turnstyle/obj/
+
+TurnstyleTest/obj/
+
+TurnstyleTest/coverage\.json
