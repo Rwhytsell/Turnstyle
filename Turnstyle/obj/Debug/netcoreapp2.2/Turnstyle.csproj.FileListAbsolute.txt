@@ -12,17 +12,3 @@ D:\School\Triumph\Turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.RazorTar
 D:\School\Triumph\Turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.dll
 D:\School\Triumph\Turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.pdb
 D:\School\Triumph\Turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.csprojAssemblyReference.cache
-D:\Triumph\turnstyle\Turnstyle\bin\Debug\netcoreapp2.2\Turnstyle.deps.json
-D:\Triumph\turnstyle\Turnstyle\bin\Debug\netcoreapp2.2\Turnstyle.runtimeconfig.json
-D:\Triumph\turnstyle\Turnstyle\bin\Debug\netcoreapp2.2\Turnstyle.runtimeconfig.dev.json
-D:\Triumph\turnstyle\Turnstyle\bin\Debug\netcoreapp2.2\Turnstyle.dll
-D:\Triumph\turnstyle\Turnstyle\bin\Debug\netcoreapp2.2\Turnstyle.pdb
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.csprojAssemblyReference.cache
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.csproj.CoreCompileInputs.cache
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.RazorAssemblyInfo.cache
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.RazorAssemblyInfo.cs
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.AssemblyInfoInputs.cache
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.AssemblyInfo.cs
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.RazorTargetAssemblyInfo.cache
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.dll
-D:\Triumph\turnstyle\Turnstyle\obj\Debug\netcoreapp2.2\Turnstyle.pdb
