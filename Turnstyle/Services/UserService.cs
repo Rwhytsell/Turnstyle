@@ -25,9 +25,7 @@ namespace Turnstyle.Services
 
             if (CheckPassword(account.Password, password))
             {
-                // TODO: Get new session token from session manager
-                // TODO: return session token
-                return new Tuple<string, string>("test_token", null);
+                return new Tuple<string, string>(SessionService.NewSession(account), null);
             }
             return new Tuple<string, string>(null, "Password was incorrect.");
         }

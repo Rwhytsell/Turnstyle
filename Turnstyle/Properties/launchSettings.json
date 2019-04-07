@@ -17,11 +17,10 @@
     },
     "Turnstyle": {
       "commandName": "Project",
-      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:51590/"
+      "applicationUrl": "http://localhost:5000/"
     },
     "Docker": {
       "commandName": "Docker",
