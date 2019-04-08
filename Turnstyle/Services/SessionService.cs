@@ -17,6 +17,8 @@ namespace Turnstyle.Services
 
         public static string NewSession(Account account)
         {
+            RemoveOldLogin(account);
+
             bool isKeyUsed;
             string key;
             do{
@@ -87,6 +89,19 @@ namespace Turnstyle.Services
                 }
                 
             });
+        }
+
+        private static async void RemoveOldLogin(Account account)
+        {
+            // Check for previous session
+            foreach (var entry in Cache)
+            {
+                var acc = entry.Value.GetAccount();
+                if (acc.Id == account.Id)
+                {
+                    InvalidateToken(entry.Key);
+                }
+            }
         }
     }
 }
