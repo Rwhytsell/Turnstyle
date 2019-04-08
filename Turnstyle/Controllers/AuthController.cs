@@ -81,7 +81,7 @@ namespace Turnstyle.Controllers
                     { "ID", account.Id.ToString() },
                     { "Roles", roles }
                 };
-                return Ok( account.Id );
+                return Ok( response );
             }
             return NotFound();
         }
