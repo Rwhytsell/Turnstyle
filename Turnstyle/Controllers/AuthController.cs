@@ -62,7 +62,7 @@ namespace Turnstyle.Controllers
 
         [HttpGet("{token}")]
         [Route("auth/check")]
-        public ActionResult<Account> Check([FromBody] string token)
+        public ActionResult<Account> Check([FromQuery] string token)
         {
             if (SessionService.CheckToken(token))
             {
