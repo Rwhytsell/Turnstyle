@@ -13,8 +13,6 @@ namespace Turnstyle.Services
         private const int DaysUntilDelete = 7;
         private static DateTime _lastClean;
         
-        // TODO: Max sessions?
-        
         // Future: Having references to the account may use too much memory, if so, only store the account id
 
         public static string NewSession(Account account)

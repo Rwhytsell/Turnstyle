@@ -59,5 +59,16 @@ namespace Turnstyle.Controllers
             Console.Error.WriteLine(error);
             return BadRequest(error);
         }
+
+        [HttpGet]
+        [Route("auth/check")]
+        public ActionResult<Account> Check([FromBody] string token)
+        {
+            if (SessionService.CheckToken(token))
+            {
+                return Ok(SessionService.GetValue(token));
+            }
+            return NotFound();
+        }
     }
 }
