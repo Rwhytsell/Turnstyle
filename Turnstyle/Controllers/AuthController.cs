@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Turnstyle.Models;
@@ -64,9 +66,22 @@ namespace Turnstyle.Controllers
         [Route("auth/check")]
         public ActionResult<Account> Check([FromQuery] string token)
         {
-            if (SessionService.CheckToken(token))
+            var ( account, error ) = SessionService.GetValue(token);
+            if (!string.IsNullOrEmpty(error))
             {
-                return Ok(SessionService.GetValue(token));
+
+                List<string> roles = new List<string>();
+                foreach (var r in account.UserroleUser)
+                {
+                    roles.Add(r.Id.ToString());
+                }
+
+                var response = new Dictionary<string, object>
+                {
+                    { "ID", account.Id.ToString() },
+                    { "Roles", roles }
+                };
+                return Ok( account.Id );
             }
             return NotFound();
         }
