@@ -60,7 +60,7 @@ namespace Turnstyle.Controllers
             return BadRequest(error);
         }
 
-        [HttpGet]
+        [HttpGet("{token}")]
         [Route("auth/check")]
         public ActionResult<Account> Check([FromBody] string token)
         {

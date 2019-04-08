@@ -344,3 +344,5 @@ Turnstyle/obj/
 TurnstyleTest/obj/
 
 TurnstyleTest/coverage\.json
+
+\.vscode/
