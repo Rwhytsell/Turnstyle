@@ -67,7 +67,7 @@ namespace Turnstyle.Controllers
         public ActionResult<Account> Check([FromQuery] string token)
         {
             var ( account, error ) = SessionService.GetValue(token);
-            if (!string.IsNullOrEmpty(error))
+            if (string.IsNullOrEmpty(error))
             {
 
                 List<string> roles = new List<string>();
