@@ -25,6 +25,6 @@ publish:
       - "dotnet publish -c Release"
     artifacts:
       paths:
-        - \Turnstyle\bin\Release\netcoreapp2.2\
-        - \Turnstyle\Dockerfile
+        - Turnstyle\bin\Release\netcoreapp2.2\
+        - Turnstyle\Dockerfile
       expire_in: 1 day
