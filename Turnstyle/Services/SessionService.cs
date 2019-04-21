@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Turnstyle.Models;
@@ -93,15 +94,19 @@ namespace Turnstyle.Services
 
         private static async void RemoveOldLogin(Account account)
         {
+            var tempCache = Cache;
+            var wasChanged = false;
             // Check for previous session
-            foreach (var entry in Cache)
+            foreach (var entry in tempCache.ToList())
             {
                 var acc = entry.Value.GetAccount();
                 if (acc.Id == account.Id)
                 {
+                    wasChanged = true;
                     InvalidateToken(entry.Key);
                 }
             }
+            if(wasChanged) Cache = tempCache;
         }
     }
 }
