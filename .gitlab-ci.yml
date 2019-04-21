@@ -23,6 +23,7 @@ publish:
     stage: publish
     script:
       - "dotnet publish -c Release"
+      - "ls"
     artifacts:
       paths:
         - Turnstyle\bin\Release\netcoreapp2.2\
