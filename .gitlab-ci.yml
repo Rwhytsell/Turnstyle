@@ -4,14 +4,11 @@ stages:
   - build
   - test
   - publish
-  - deploy
-
-before_script:
-  - "dotnet restore"
 
 build:
   stage: build
   script:
+    - "dotnet restore"
     - "dotnet build"
 
 test:
