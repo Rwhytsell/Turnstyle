@@ -21,6 +21,6 @@ publish:
   stage: publish
   script:
       - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY $CI_REGISTRY"
-      - "ls"
-      - "docker build -t $CI_REGISTRY/triumph-gaming/turnstyle:latest Turnstyle/" 
-      - "docker push $CI_REGISTRY/triumph-gaming/turnstyle:latest"
+      - "cd Turnstyle"
+      - "docker build -t registry.gitlab.com/triumph-gaming/turnstyle ." 
+      - "docker push registry.gitlab.com/triumph-gaming/turnstyle"
