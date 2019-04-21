@@ -17,7 +17,6 @@ test:
     - "dotnet test"
     
 publish:
-  image: docker:latest
   stage: publish
   script:
       - "cd Turnstyle"
