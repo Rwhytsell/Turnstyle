@@ -3,6 +3,7 @@ image: microsoft/dotnet:latest
 stages:
   - build
   - test
+  - publish
   - deploy
 
 before_script:
@@ -18,10 +19,12 @@ test:
   script:
     - "dotnet test"
     
-deploy:
-    stage: deploy
+publish:
+    stage: publish
     script:
-    - "dotnet publish -c Release"
-    - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY $CI_REGISTRY"
-    - "docker build -t $CI_REGISTRY/triumph-gaming/turnstyle:latest ." 
-    - "docker push $CI_REGISTRY/triumph-gaming/turnstyle:latest"
+      - "dotnet publish -c Release"
+    artifacts:
+      paths:
+        - \Turnstyle\bin\Release\netcoreapp2.2\
+        - \Turnstyle\Dockerfile
+        expire_in: 1 day
