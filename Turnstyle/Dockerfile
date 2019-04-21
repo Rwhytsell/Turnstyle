@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore-build:latest AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
@@ -10,7 +10,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
-FROM microsoft/dotnet:aspnetcore-runtime
+FROM mcr.microsoft.com/dotnet/core/runtime
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Turnstyle.dll"]
