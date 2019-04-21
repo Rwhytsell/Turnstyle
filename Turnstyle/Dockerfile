@@ -1,15 +1,16 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 
+# copy csproj and restore as distinct layers
+COPY turnstyle/*.csproj ./
 RUN dotnet restore
 
-# copy everything else and build app
-COPY turnstyle/. ./turnstyle/
-WORKDIR /app/turnstyle
+# copy everything else and build
+COPY turnstyle/ ./
 RUN dotnet publish -c Release -o out
 
-
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+# build runtime image
+FROM microsoft/aspnetcore:2.0
 WORKDIR /app
-COPY --from=build /app/turnstyle/out ./
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "turnstyle.dll"]
