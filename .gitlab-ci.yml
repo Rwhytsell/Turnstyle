@@ -19,8 +19,8 @@ test:
 publish:
   image: docker:latest
   stage: publish
-  script:
-      - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY $CI_REGISTRY"
+    script:
       - "cd Turnstyle"
       - "docker build -t registry.gitlab.com/triumph-gaming/turnstyle ." 
+      - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY registry.gitlab.com"
       - "docker push registry.gitlab.com/triumph-gaming/turnstyle"
