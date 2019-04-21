@@ -1,6 +1,18 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2
-EXPOSE 5000
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+WORKDIR /app
 
-COPY app/bin/Release/netcoreapp2.2/publish/ app/
+# copy csproj and restore as distinct layers
+COPY *.sln .
+COPY turnstyle/*.csproj ./turnstyle/
+RUN dotnet restore
 
-ENTRYPOINT ["dotnet", "app/Turnstyle.dll"]
+# copy everything else and build app
+COPY turnstyle/. ./turnstyle/
+WORKDIR /app/turnstyle
+RUN dotnet publish -c Release -o out
+
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+WORKDIR /app
+COPY --from=build /app/turnstyle/out ./
+ENTRYPOINT ["dotnet", "turnstyle.dll"]
