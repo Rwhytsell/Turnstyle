@@ -21,7 +21,7 @@ test:
 deploy:
     stage: deploy
     script:
-    - "dotnet publish -C Release"
+    - "dotnet publish -c Release"
     - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY $CI_REGISTRY"
     - "docker build -t $CI_REGISTRY/triumph-gaming/turnstyle:latest ." 
     - "docker push $CI_REGISTRY/triumph-gaming/turnstyle:latest"
