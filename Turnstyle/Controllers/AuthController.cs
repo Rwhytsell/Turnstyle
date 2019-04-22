@@ -21,7 +21,7 @@ namespace Turnstyle.Controllers
         [Route("auth/ping")]
         public ActionResult Ping()
         {
-            return Ok();
+            return Accepted();
         }
         
         /**
