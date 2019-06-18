@@ -3,7 +3,8 @@ image: microsoft/dotnet:latest
 stages:
   - build
   - test
-  - publish
+  - publish-staging
+  - publish-prod
 
 build:
   stage: build
@@ -15,11 +16,26 @@ test:
   stage: test
   script:
     - "dotnet test"
-    
-publish:
-  stage: publish
+
+publish-staging:
+  stage: publish-staging
   script:
       - "cd Turnstyle"
-      - "docker build -t registry.gitlab.com/triumph-gaming/turnstyle ." 
+      - "docker build -t registry.gitlab.com/triumph-gaming/turnstyle:latest ." 
       - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY registry.gitlab.com"
-      - "docker push registry.gitlab.com/triumph-gaming/turnstyle:latest"
+      - "docker push registry.gitlab.com/triumph-gaming/turnstyle:latest" 
+  only:
+      - master
+
+publish-prod:
+  stage: publish-prod
+  script:
+      - "cd Turnstyle"
+      - "TPR ."
+      - "docker build -t registry.gitlab.com/triumph-gaming/turnstyle:prod ." 
+      - "docker login -u Rwhytsell67@gmail.com -p ytjBdx1_tcfEqeGLv3BY registry.gitlab.com"
+      - "docker push registry.gitlab.com/triumph-gaming/turnstyle:prod"
+  only:
+      - production
+  
+
