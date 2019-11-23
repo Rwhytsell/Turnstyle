@@ -34,7 +34,7 @@ namespace Turnstyle.Models
             if (!optionsBuilder.IsConfigured)
             {
                 // To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseNpgsql("Host=triumph-db-do-user-4626831-0.db.ondigitalocean.com;Port=25060;Database=triumph;Username=doadmin;Password=bdciyohf75k1pm46;SSL Mode=Require;Check Certificate Revocation=False;Trust Server Certificate=True;Persist Security Info=True");
+                optionsBuilder.UseNpgsql();
             }
         }
 
